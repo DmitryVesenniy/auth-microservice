@@ -1,8 +1,7 @@
-server:
-  host: 127.0.0.1
-  port: 8080
-  timeout:
-    server: 30
-    read: 15
-    write: 10
-    idle: 5
+env: ".env"  
+storage_path: "./db.sqlite3"  
+grpc:  
+  port: 44044  
+  timeout: 10h
+database:
+  engine_type: "sqlite"

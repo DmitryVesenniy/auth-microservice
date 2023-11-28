@@ -11,7 +11,7 @@ service Auth {
 message RegisterRequest {
     string email = 1;
     string password = 2;
-    int32 appId = 3;
+    optional int32 appId = 3;
 }
 
 message RegisterResponse {
@@ -30,5 +30,4 @@ message LoginResponse {
     string token = 1;
     string expiredToken = 2;
 }
-
-// protoc --proto_path api/proto/ --go_out=api/gen/protogo/ --go_opt=paths=source_relative --go-grpc_out=api/gen/protogo/ --go-grpc_opt=paths=source_relative api/proto/auth.proto 
+ 
