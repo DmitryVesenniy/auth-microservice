@@ -1,11 +1,21 @@
 package main
 
-import "github.com/DmitryVesenniy/auth-microservice/internal/app"
+import (
+	"fmt"
+
+	"github.com/DmitryVesenniy/auth-microservice/internal/app"
+	"github.com/DmitryVesenniy/auth-microservice/internal/config"
+	"github.com/DmitryVesenniy/auth-microservice/pkg/logger"
+)
 
 func main() {
-	// TODO: инициализировать объект конфига
+	cfg, err := config.ConfigLoad()
 
-	// TODO: инициализировать логгер
+	if err != nil {
+		panic(fmt.Sprintf("[!] Error load config: %s", err))
+	}
+
+	log := logger.SetupLogger(cfg.Env)
 
 	// TODO: инициализировать приложение (app)
 

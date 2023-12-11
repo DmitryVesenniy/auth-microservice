@@ -1,4 +1,4 @@
-env: ".env"  
+env: "local"  
 storage_path: "./db.sqlite3"  
 grpc:  
   port: 44044  

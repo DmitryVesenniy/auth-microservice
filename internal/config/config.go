@@ -3,8 +3,6 @@ package config
 import "time"
 
 const (
-	DefaultEnv = ".env"
-
 	EngineTypeSqlite   = "sqlite"
 	EngineTypePostgres = "postgres"
 	EngineTypeMySQL    = "mysql"
@@ -14,7 +12,7 @@ const (
 
 type Config struct {
 	MigrationsPath  string        `yaml:"migrations_path" env-default:"migrations"`
-	Env             string        `yaml:"env" env-default:".env"`
+	Env             string        `yaml:"env" env-default:"local"`
 	StorageFile     string        `yaml:"storage_path" env-required:"true"`
 	TokenTTL        time.Duration `yaml:"token_ttl" env-default:"10m"`
 	TokenExpiredTTL time.Duration `yaml:"token_expired_ttl" env-default:"24h"`

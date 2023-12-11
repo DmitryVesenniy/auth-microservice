@@ -1,6 +1,7 @@
 package tests
 
 import (
+	"fmt"
 	"os"
 	"testing"
 
@@ -19,4 +20,6 @@ func TestConfig(t *testing.T) {
 	if cfg.Database.EngineType == "" {
 		t.Error("error init: EngineType")
 	}
+
+	fmt.Printf("config: %+v\n", cfg)
 }
